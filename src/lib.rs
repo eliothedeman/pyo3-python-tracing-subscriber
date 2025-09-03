@@ -241,7 +241,7 @@ mod tests {
 
         let expected_events = vec![("About to record something".to_owned(), "INFO".to_owned(), 0)];
         let expected_new_spans =
-            vec![json!({"arg1": 1337, "arg2": "\"foo\"", "level": "INFO", "name": "func"})];
+            vec![json!({"arg1": 1337, "arg2": "foo", "level": "INFO", "name": "func"})];
         let expected_closed_spans = vec![0];
         let expected_records = vec![(json!({"data": "some data"}), 0)];
 
@@ -268,7 +268,7 @@ mod tests {
         let expected_events = vec![("About to record something".to_owned(), "INFO".to_owned(), 1)];
         let expected_new_spans = vec![
             json!({"level": "WARN", "name": "outer"}),
-            json!({"arg1": 1337, "arg2": "\"bar\"", "level": "INFO", "name": "func"}),
+            json!({"arg1": 1337, "arg2": "bar", "level": "INFO", "name": "func"}),
         ];
         let expected_closed_spans = vec![1, 0];
         let expected_records = vec![(json!({"data": "some data"}), 1)];
